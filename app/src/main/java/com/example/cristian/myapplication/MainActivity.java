@@ -62,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                     });
-
-                   // Toast.makeText(MainActivity.this,"resultado: " + service.result(varjson),Toast.LENGTH_SHORT).show();
                 }catch (Exception e){
                     Log.v("peta esto",e.getMessage());
                 }
