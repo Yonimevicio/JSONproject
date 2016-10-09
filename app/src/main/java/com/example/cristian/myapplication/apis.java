@@ -16,5 +16,5 @@ import retrofit2.http.Path;
 public interface apis {
     @FormUrlEncoded
     @POST("/mamaAway/consultas.php")
-    Call<ServerResponseJSON> result(@Field("fun") JSONObject fun);
+    Call<ServerResponseJSON> result(@Field("JSON_ENVIAR") JSONObject JSON_ENVIAR);
 }

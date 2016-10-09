@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
                             .addConverterFactory(GsonConverterFactory.create(gson))
                             .build();
                     apis service = retrofit.create(apis.class);
-                    //Log.v("resultado",service.result(varjson).toString());
                     Call<ServerResponseJSON> call = service.result(varjson);
                     call.enqueue(new Callback<ServerResponseJSON>() {
                         public void onResponse(Call<ServerResponseJSON> call, Response<ServerResponseJSON> response) {
@@ -62,24 +61,6 @@ public class MainActivity extends AppCompatActivity {
                         public void onFailure(Call<ServerResponseJSON> call, Throwable t) {
 
                         }
-
-                        /*try {
-                                JSONObject info = response.body();
-                                JSONArray jsonArray = info.optJSONArray("respuesta");
-                                JSONObject jresponse = jsonArray.getJSONObject(0);
-                                String nickname = jresponse.getString("titulo");
-                                Log.v("respuesta",nickname);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            // info.getJSONArray("respuesta").toString());
-
-                        }
-
-                        @Override
-                        public void onFailure(Call<ServerResponseJSON> call, Throwable t) {
-                            Log.e("mal", t.toString());
-                        }*/
                     });
 
                    // Toast.makeText(MainActivity.this,"resultado: " + service.result(varjson),Toast.LENGTH_SHORT).show();
